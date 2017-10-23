@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>UTS APAP</title>
+</head>
+<body>
+	<div th:replace="fragments/header"></div>
+	<div class="container">
+	<br/><br/>
+	<h2>Update Ruangan</h2>
+	<span>Keterangan: Isian bertanda * harus diisi</span>
+
+	<hr/>
+	
+	<form action="/ruangan/update/submit" method="post" th:object='${ruangan}'>
+		<div>
+			<label for="kode_ruang">Kode Ruang*</label> <input type="text" class="form-control" name="kode_ruang" th:value="${ruangan.kode_ruang}" th:field="*{kode_ruang}" />
+		</div><br/>
+		<div>
+			<label for="deskripsi">Deskripsi Ruangan*</label> <input type="text" class="form-control" name="deskripsi" th:value="${ruangan.deskripsi}" th:field="*{deskripsi}" />
+		</div><br/>
+		<div>
+			<label for="tipe">Tipe*</label> <br/>
+			<select th:value="${ruangan.tipe}"
+		      name="tipe" id="tipe" required="required">
+		     
+		      <option value="1">Auditorium</option>
+		       <option value="2">Office Room</option>
+		      
+     		</select>
+		</div><br/>
+		
+		<div>
+			<label for="panjang">Panjang*</label> <input type="text" class="form-control" name="panjang" th:value="${ruangan.panjang}" th:field="*{panjang}" />
+		</div><br/>
+		
+		<div>
+			<label for="lebar">Lebar*</label> <input type="text" class="form-control" name="lebar" th:value="${ruangan.lebar}" th:field="*{lebar}" />
+		</div><br/>
+		
+		<div>
+			<label for="harga_sewa">Harga Sewa*</label> <input type="text" class="form-control" name="harga_sewa" th:value="${ruangan.harga_sewa}" th:field="*{harga_sewa}" />
+		</div><br/>
+	
+		<div>
+			<label for="deskripsi">Lokasi*</label> <input type="text" class="form-control" name="lokasi" th:value="${ruangan.lokasi}" th:field="*{lokasi}" />
+		</div><br/>
+		
+		<div>
+			<label for="fasilitas">Fasilitas*</label> <input type="text" class="form-control" name="fasilitas" th:value="${ruangan.fasilitas}" th:field="*{fasilitas}" />
+		</div><br/>
+		
+		<div>
+			<label for="status">Status*</label> <br/>
+			<select
+		      name="status" id="status" required="required">
+		      <option value="1">Available</option>
+		      <option value="0">Not Available</option>
+		      
+     		</select>
+		</div><br/>
+		
+		
+
+		<div>
+			<button type="submit" name="action" value="save">Update</button>
+		</div>
+	</form>
+	
+	
+
+   
+  
+	</div>
+</body>
+</html>
